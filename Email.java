@@ -27,6 +27,7 @@ public class Email {
          System.out.print("New worker: " + firstName + ", Department Codes\n1 for Sales\n2 for Development\n3 for Accounting\n0 for none\nEnter department code: ");
          Scanner scan = new Scanner(System.in);
          int deptChoice = scan.nextInt();
+         scan.close();
          if(deptChoice == 1 ){
              return "sales";
          } else if(deptChoice == 2){
@@ -35,11 +36,11 @@ public class Email {
              return "accounting";
          } else{
              return "";
-         }
-         
-     }
-
-     private String randomPassword(int length){
+            }
+        }
+        
+        
+        private String randomPassword(int length){
          String passwordSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%";
          char[] password = new char[length];
          for(int i = 0; i<length; i++){
