@@ -9,22 +9,22 @@ public class Email {
      public Email(String firstName, String lastName){
          this.firstName = firstName;
          this.lastName = lastName;
-         System.out.println("Email created: " + firstName + " "+ lastName);
+        //  System.out.println("Email created: " + firstName + " "+ lastName);
 
          //Call a method asking for department and return department
          this.department = setDepartment();
-         System.out.println("Department " + this.department);
+        //  System.out.println("Department " + this.department);
 
          //Call a method to return a random password
          this.password = randomPassword(defaultPasswordLength);
          System.out.println("Your password is: " + this.password);
          //combne elements to generate email
          email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "."+ companySuffix;
-         System.out.println("Your email is: " + email);
+        //  System.out.println("Your email is: " + email);
      }
 
      private String setDepartment(){
-         System.out.print("Department Codes\n1 for Sales\n2 for Development\n3 for Accounting\n0 for none\nEnter department code: ");
+         System.out.print("New worker: " + firstName + ", Department Codes\n1 for Sales\n2 for Development\n3 for Accounting\n0 for none\nEnter department code: ");
          Scanner scan = new Scanner(System.in);
          int deptChoice = scan.nextInt();
          if(deptChoice == 1 ){
@@ -61,5 +61,21 @@ public class Email {
          this.password = password;
      }
 
-     
+      //getters
+
+      public int getMailBoxCapacity(){
+          return mailboxCapacity;
+      }
+      public String getAlternateEmail(){
+          return alternateEmail;
+      }
+      public String getPassword(){
+          return password;
+      }
+
+      public String showInfo(){
+          return "Display Name: " + firstName + " " +lastName +
+                 "\nCompany Email: " + email +
+                 "\nMailbox Capacity: " + mailboxCapacity + "mb";
+      }
 }
